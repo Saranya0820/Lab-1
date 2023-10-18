@@ -1,1 +1,1 @@
-# Lab-1
+Lab of html and javascript
