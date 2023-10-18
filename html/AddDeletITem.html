@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width= device-width intial-scale=1">
+        <meta name="author" content="saranya">
+        <title>Add and Delete Item</title>
+</head>
+
+    <body>
+        <h1>List of Item</h1>
+         
+        <form>
+            <input type="text" name="text" id="txt">
+            <button type="button" onclick="addItem()"> Add</button>
+        </form>
+            <ul id="items">
+                <li>  </li>
+            
+            </ul> 
+        </div>
+  
+    <script>
+
+        var inputText = document.getElementById("txt");
+
+        function addItem(){
+
+            var ul = document.getElementById('items');
+            var newItem = document.createTextNode(inputText.value);
+            var li = document.createElement("li");
+            li.setAttribute('id', newItem);
+            li.appendChild(newItem);
+            //ul.appendChild(li);
+
+            var mylink = document.createElement('a');
+            mylink.setAttribute('href', '#');
+            mylink.innerHTML = ' Delete';
+            mylink.onclick = (function(id){return function(){ deletItem(id); }})(newItem);
+            li.appendChild(mylink);
+            ul.appendChild(li);
+
+                    
+            }
+            function deletItem(itemId){
+                var ul = document.getElementById("items");
+                var item = document.getElementById(itemId);
+                ul.removeChild(item);
+            }
+
+
+
+
+
+    </script>
+    </body>
+</html>
